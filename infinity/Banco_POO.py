@@ -5,19 +5,11 @@ class Conta:
         self.titular=titular
         self.saldo_conta=0
 
-    def cadastro_deconta(self):
-        
-        
-        self.n_conta=int(input("Digite o número da conta: "))
-        self.titular=str(input("Digite o nome do titular: "))
-        self.t_conta=str(input("Digite o tipo de conta: (Corrente/Poupança"))
-
-
     def deposito(self):
 
         self.valor=float(input("Digite o valor:"))
         self.saldo_conta+=self.valor
-        print(f"Deposito de:{self.valor}realizado")
+        print(f"Deposito de:{self.valor}")
 
 
     def saque(self):
@@ -75,6 +67,12 @@ class Conta_Poupanca(Conta):
         self.saldo_conta+=juros
         print(F"A taxa do juros é de{juros}")
         print(F"Saldo:{self.saldo_conta}")
+        
+        
+        
+cc=Conta_Corrente(55368,'Jorge Luis')
+cc.deposito()
+cc.resumo()     
                 
                 
             
