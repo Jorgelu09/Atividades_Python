@@ -44,13 +44,10 @@ class Conta:
             print(f"{chave,valor}")
 
 
-    class Conta_Corrente(Conta):
-        def __init__(self,n_conta,t_conta,titular):
-
-            self.t_conta="Corrente"
+class Conta_Corrente(Conta):
+        def __init__(self,n_conta,titular):
             self.cheque_especial=1.000
-            self.saldo_conta=0
-            super().__init__(n_conta,t_conta,titular)
+            super().__init__(n_conta,"Corrente",titular)    
 
         def saque(self):
             
@@ -63,6 +60,9 @@ class Conta:
                 self.saldo_conta-=valor
                 print(f"Saque realizado!!")
                 print(f"Saldo:{self.saldo_conta}|!")
+                
+b1=Conta(n_conta=555368,t_conta="Corrente",titular="Jorge Luis Ferreira da Silva Junior")
+b1.resumo
                 
                 
             
