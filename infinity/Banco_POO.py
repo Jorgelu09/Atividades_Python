@@ -1,3 +1,4 @@
+#Classe base onde os atributos e  metodos principais estão sendo definidos
 class Conta:
     def __init__(self,n_conta,t_conta,titular):
         self.n_conta=n_conta
@@ -5,12 +6,15 @@ class Conta:
         self.titular=titular
         self.saldo_conta=0
 
+#Metodo para realizar o deposito de valores nas contas
+
     def deposito(self):
 
         self.valor=float(input("Digite o valor:"))
         self.saldo_conta+=self.valor
         print(f"Deposito de:{self.valor}")
-
+        
+#Metodo para realizar saque 
 
     def saque(self):
 
@@ -22,6 +26,7 @@ class Conta:
 
             print("Você está sem saldo")
 
+#Metodo para resumo de informações de cada conta, utilizando um dicionário e um for para percorrer o mesmo. 
     def resumo(self):
 
         resumo_contabancaria={
@@ -34,8 +39,9 @@ class Conta:
         }
         for chave,valor in resumo_contabancaria.items():
 
-            print(f"{chave,valor}")
+            print(f"{chave}:{valor}")
 
+#Classe filha, herdando as informações da classe pai e inserindo seu atributo proprio "cheque especial" e com o metodo saque sendo sobrescrito com a particularidade da condição do cheque especial.
 
 class Conta_Corrente(Conta):
         def __init__(self,n_conta,titular):
@@ -54,6 +60,8 @@ class Conta_Corrente(Conta):
                 print(f"Saque realizado!!")
                 print(f"Saldo:{self.saldo_conta}|!")
                 
+#Classe filha herdando atributos e metodos da classe pai, porém inserindo o metodo de taxa de juros e acrescentando o atributo também. 
+              
 class Conta_Poupanca(Conta):
     
     def __init__(self, n_conta, titular,taxa_juros):
@@ -71,6 +79,10 @@ class Conta_Poupanca(Conta):
         
         
 cc=Conta_Corrente(55368,'Jorge Luis')
+cc.deposito()
+cc.resumo()
+
+cp=Conta_Poupanca(55364,'Tailane Sidral')
 cc.deposito()
 cc.resumo()     
                 
