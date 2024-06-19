@@ -51,5 +51,11 @@ class Revista(Material):
         
         for chave, valor in resumo.items():
                 print(f"{chave}:{valor}")
+
+livro=Livro("O amanhecer azul","Jorge Luis","LM","Aventura")
+livro.exibir_informacoes()
+
+revista=Revista("Veja","Tailane Sidral","UOL","5")
+revista.exibir_informacoes()
             
                     
