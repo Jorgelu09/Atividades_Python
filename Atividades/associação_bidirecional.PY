@@ -6,7 +6,6 @@ class Pedido:
         
         self.nome=nome
         
-
 class Cliente:
     
     def __init__(self,nome):
@@ -28,9 +27,6 @@ class Cliente:
             
                 print(f'Cliente:{self.nome}  Pedido:{pedido}') 
             
-            
-
-
 cliente1=Cliente("Jorge")
 pedido1=cliente1.cadastrar_pedido("Camisa da nike")
 pedid2=cliente1.cadastrar_pedido("Camisa da adidas")
